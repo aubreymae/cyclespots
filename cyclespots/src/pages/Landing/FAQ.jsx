@@ -4,11 +4,12 @@ function FAQ() {
   return (
     <>
       <div className="main-section-title-container">
-        <h2 className="main-section-title">Want to get featured?</h2>
+        <h2 className="main-section-title">Frequently asked questions</h2>
         <p className="main-section-subtitle">
-          Reach out to have your shop or product-based service listed on the
-          site. For any other questions about the directory, feel free to
-          contact us!
+          Find answers to common questions about getting your shop or
+          product-based service listed on our site. If you need more information
+          or have any other inquiries about the directory, feel free to reach
+          out to us!
         </p>
       </div>
       <section className="faq-section framed-box">

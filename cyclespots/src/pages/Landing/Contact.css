@@ -1,0 +1,34 @@
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--global-gap-sm);
+}
+
+.contact-form__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--global-gap-sm);
+}
+
+.contact-form__col {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 1 0;
+  gap: var(--global-gap-sm);
+}
+
+.contact-form__row input,
+.contact-form__row label {
+  display: flex;
+  white-space: nowrap;
+}
+
+.contact-input {
+  width: 100%;
+}
+
+.contact-section {
+  padding: var(--global-padding-md);
+}

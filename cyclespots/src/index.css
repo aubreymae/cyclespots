@@ -94,7 +94,7 @@ button {
   flex-direction: column;
 }
 
-.faq-section {
+.framed-box {
   border-radius: var(--global-border-radius-sm);
 }
 
@@ -143,8 +143,11 @@ button {
     background-color: var(--global-light-grey);
   }
 
-  .main-section,
-  .faq-section {
+  input::placeholder {
+    color: #6c6c6c;
+  }
+
+  .framed-box {
     background-color: #fff;
     border: var(--global-border);
   }
@@ -205,12 +208,12 @@ button {
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  body {
-    margin: var(--page-margin-t) var(--page-margin-lr) 0 var(--page-margin-lr);
-  }
+  /* Code */
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  /* Code */
+  body {
+    margin: var(--page-margin-t) var(--page-margin-lr) 0 var(--page-margin-lr);
+  }
 }

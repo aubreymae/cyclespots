@@ -24,14 +24,52 @@
   list-style: none;
 }
 
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  /* Code */
+@media only screen and (max-width: 700px) {
+  #nav {
+    flex-direction: column;
+  }
+
+  #nav__title {
+    gap: var(--global-gap-sm);
+  }
+
+  #nav--mobile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .menu-icon {
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+  }
+
+  #nav__menu {
+    display: none;
+    flex-direction: column;
+  }
+
+  #nav__menu.open {
+    display: flex;
+  }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-  /* Code */
+  #nav__menu {
+    gap: var(--global-gap-sm);
+  }
+
+  #nav__title {
+    gap: var(--global-gap-md);
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
