@@ -1,4 +1,5 @@
 import "./FAQ.css";
+import { FiArrowRight, FiArrowDown } from "react-icons/fi";
 
 function FAQ() {
   return (
@@ -17,28 +18,45 @@ function FAQ() {
           <summary className="accordion-summary">
             Can I suggest a bike shop to be added?
           </summary>
-          <p>Answer</p>
+          <div className="accordion-answer-wrapper">
+            <p>
+              Absolutely! Feel free to reach out to us using the contact form
+              below.
+            </p>
+          </div>
         </details>
         <details name="faq" className="accordion-container">
           <summary className="accordion-summary">
             I'm a shop owner. How do I get listed?
           </summary>
-          <p>Answer</p>
+          <div className="accordion-answer-wrapper">
+            <p>
+              Send us an email or connect with us through the contact form
+              below.
+            </p>
+          </div>
         </details>
         <details name="faq" className="accordion-container">
           <summary className="accordion-summary">
             Do you charge shops to be listed?
           </summary>
-          <p>Answer</p>
+          <div className="accordion-answer-wrapper">
+            <p>
+              No, we are currently offering free featured listings. Reach out to
+              us if you'd like to get featured!
+            </p>
+          </div>
         </details>
         <details name="faq" className="accordion-container">
           <summary className="accordion-summary">
             Is Cyclespots available outside Toronto?
           </summary>
-          <p>
-            Right now, we're focused on the Toronto area—but we are working to
-            expand! Let us know if you'd like to see Cyclespots in your city.
-          </p>
+          <div className="accordion-answer-wrapper">
+            <p>
+              Right now, we're focused on the Toronto area—but we are working to
+              expand! Let us know if you'd like to see Cyclespots in your city.
+            </p>
+          </div>
         </details>
       </section>
     </>
