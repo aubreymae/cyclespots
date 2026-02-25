@@ -76,6 +76,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: var(--global-gap-sm);
 }
 
 .main-section-subtitle {

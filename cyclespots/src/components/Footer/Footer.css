@@ -1,0 +1,6 @@
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--global-gap-lg);
+}
