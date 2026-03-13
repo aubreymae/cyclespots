@@ -58,13 +58,19 @@ function Menu() {
         </div>
         <ul id="nav__menu" className={menuOpen ? "open" : ""}>
           <li className="nav__menu-item">
-            <NavLink to="/search">Find listings</NavLink>
+            <NavLink to="/search" className="nav__menu-item-link">
+              Home
+            </NavLink>
           </li>
           <li className="nav__menu-item">
-            <NavLink to="/contact">Reach out to us</NavLink>
+            <NavLink to="/contact" className="nav__menu-item-link">
+              Store Database
+            </NavLink>
           </li>
           <li className="nav__menu-item">
-            <NavLink to="/faq">Read our FAQs</NavLink>
+            <NavLink to="/faq" className="nav__menu-item-link">
+              Questions?
+            </NavLink>
           </li>
         </ul>
       </nav>

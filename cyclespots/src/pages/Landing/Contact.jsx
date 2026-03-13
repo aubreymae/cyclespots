@@ -72,6 +72,7 @@ function Contact() {
               placeholder="Hey team, wondering if we can be featured on your directory?"
             />
           </div>
+          <button>Submit</button>
         </form>
       </section>
     </>
