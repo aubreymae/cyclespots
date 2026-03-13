@@ -36,8 +36,12 @@
   background: #fff;
 }
 
-.menu-icon {
+#menu-icon {
   display: none;
+  cursor: pointer;
+}
+
+#menu-icon-x {
   cursor: pointer;
 }
 
@@ -57,7 +61,7 @@
     justify-content: space-between;
   }
 
-  .menu-icon {
+  #menu-icon {
     display: flex;
     justify-self: flex-end;
     align-items: center;
@@ -75,6 +79,10 @@
     align-self: flex-end;
     gap: var(--global-gap-sm);
     width: fit-content;
+    background-color: #fff;
+    padding: var(--global-padding-sm);
+    border: solid 1px #000;
+    border-radius: var(--global-border-radius-sm);
     margin-top: 2em;
     z-index: 10;
   }
