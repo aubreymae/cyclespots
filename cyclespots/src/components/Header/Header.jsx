@@ -90,7 +90,7 @@ function Menu() {
           </li>
           <li className="nav__menu-item">
             <NavLink to="/listings" className="nav__menu-item-link">
-              Store Database
+              Store Listings
             </NavLink>
           </li>
           <li className="nav__menu-item">
