@@ -36,7 +36,7 @@ function Menu() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 id="menu-icon-x"
-                className={menuOpen ? "open" : ""}
+                className={menuOpen ? "fixed" : ""}
               >
                 <path
                   d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
@@ -84,17 +84,17 @@ function Menu() {
         </div>
         <ul id="nav__menu" className={menuOpen ? "open" : ""}>
           <li className="nav__menu-item">
-            <NavLink to="/search" className="nav__menu-item-link">
+            <NavLink to="/" className="nav__menu-item-link">
               Home
             </NavLink>
           </li>
           <li className="nav__menu-item">
-            <NavLink to="/contact" className="nav__menu-item-link">
+            <NavLink to="/listings" className="nav__menu-item-link">
               Store Database
             </NavLink>
           </li>
           <li className="nav__menu-item">
-            <NavLink to="/faq" className="nav__menu-item-link">
+            <NavLink to="/contact" className="nav__menu-item-link">
               Questions?
             </NavLink>
           </li>

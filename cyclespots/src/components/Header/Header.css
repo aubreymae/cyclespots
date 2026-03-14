@@ -36,6 +36,10 @@
   background: #fff;
 }
 
+#nav__icons {
+  z-index: 2;
+}
+
 #menu-icon {
   display: none;
   cursor: pointer;
@@ -62,9 +66,25 @@
   }
 
   #menu-icon {
+    position: fixed;
     display: flex;
     justify-self: flex-end;
     align-items: center;
+    right: var(--global-padding-sm);
+    padding: var(--global-padding-sm);
+    border: solid 1px #000;
+    border-radius: var(--global-border-circle);
+    background: #fff;
+  }
+
+  #menu-icon-x.fixed {
+    position: fixed;
+    right: var(--global-padding-sm);
+    padding: var(--global-padding-sm);
+    border: solid 1px #000;
+    border-radius: var(--global-border-circle);
+    background: #fff;
+    cursor: pointer;
   }
 
   #nav__menu {
@@ -83,7 +103,7 @@
     padding: var(--global-padding-sm);
     border: solid 1px #000;
     border-radius: var(--global-border-radius-sm);
-    margin-top: 2em;
+    top: 5em;
     z-index: 10;
   }
 
