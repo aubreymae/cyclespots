@@ -37,9 +37,9 @@ export default function SearchListing() {
             ></path>
           </svg>
           <div className="listing-body">
-            <p>You are looking at shops around</p>
-            <p>158 Queen Street East, Toronto, Canada</p>
-            <p>About 40 shops were found in your search</p>
+            <h2>You are looking at shops around</h2>
+            <h2>158 Queen Street East, Toronto, Canada</h2>
+            <h2>About 40 shops were found in your search</h2>
           </div>
         </div>
         <form action="" id="hero-form" className="form-container">

@@ -1,7 +1,9 @@
+import SearchListing from "../../components/SearchListing/SearchListing";
+
 function Listings() {
   return (
     <>
-      <p>Listings</p>
+      <SearchListing />
     </>
   );
 }
