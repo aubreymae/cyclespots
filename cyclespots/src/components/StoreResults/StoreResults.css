@@ -1,0 +1,8 @@
+#store-results-tb {
+  width: 100%;
+}
+
+.store-results-tb__h {
+  display: flex;
+  justify-content: space-between;
+}
