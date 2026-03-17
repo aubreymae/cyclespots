@@ -4,13 +4,13 @@ create table stores (
     store_id int generated always as identity primary key,
     store_name text not null,
     street_address text,
-    rating float,
-    created_at timestamp
+    rating numeric(2,1),
+    created_at timestamptz default now()
 );
 
 create table services (
     service_id int generated always as identity primary key,
-    service_name text
+    service_name text unique
 );
 
 create table store_services (
