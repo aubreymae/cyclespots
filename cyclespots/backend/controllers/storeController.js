@@ -3,10 +3,9 @@ import { getStore } from "../services/storeService.js";
 async function getStoreController(req, res) {
   try {
     const data = await getStore();
-
-    return data;
+    res.json(data);
   } catch (error) {
-    throw new Error(error.message);
+    res.status(500).json({ error: error.message });
   }
 }
 
