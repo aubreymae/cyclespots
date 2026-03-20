@@ -1,4 +1,4 @@
-import supabase from "../db/supabaseClient";
+import supabase from "../db/supabaseClient.js";
 
 async function getStore() {
   try {
@@ -10,4 +10,4 @@ async function getStore() {
   }
 }
 
-export default { getStore };
+export { getStore };

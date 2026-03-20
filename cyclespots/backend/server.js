@@ -7,7 +7,7 @@ const app = express();
 dotenv.config();
 
 app.use(express.json());
-app.use("/posts", router);
+app.use("/stores", router);
 
 app.listen(process.env.PORT, () => {
   console.log(`Server running at port ${process.env.PORT}/`);

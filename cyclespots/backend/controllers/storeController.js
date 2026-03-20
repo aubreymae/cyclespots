@@ -10,4 +10,4 @@ async function getStoreController(req, res) {
   }
 }
 
-export default { getStoreController };
+export { getStoreController };
