@@ -4,5 +4,6 @@
 
 .store-results-tb__h {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: var(--global-gap-sm);
 }
