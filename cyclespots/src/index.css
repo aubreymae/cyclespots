@@ -165,7 +165,7 @@ button {
     border: var(--global-border);
   }
 
-  .custom-select::before {
+  /* .custom-select::before {
     border-left: var(--size) solid transparent;
     border-right: var(--size) solid transparent;
     border-bottom: var(--size) solid black;
@@ -177,7 +177,7 @@ button {
     border-right: var(--size) solid transparent;
     border-top: var(--size) solid black;
     top: 55%;
-  }
+  } */
 
   .accordion-container {
     border-bottom: solid 1px lightgray;

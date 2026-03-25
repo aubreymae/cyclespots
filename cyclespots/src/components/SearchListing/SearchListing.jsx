@@ -37,9 +37,10 @@ export default function SearchListing() {
             ></path>
           </svg>
           <div className="listing-body">
-            <h2>You are looking at shops around</h2>
-            <h2>158 Queen Street East, Toronto, Canada</h2>
-            <h2>About 40 shops were found in your search</h2>
+            <h2>
+              Find the closest store near you. Enter an address and type of
+              service below.
+            </h2>
           </div>
         </div>
         <form action="" id="hero-form" className="form-container">
@@ -49,13 +50,14 @@ export default function SearchListing() {
           <div className="form-container__item custom-select">
             <select name="" id="select-container">
               <option value="" disabled selected>
-                Choose a category
+                Choose a service
               </option>
-              <option value="">Sales</option>
               <option value="">Repairs</option>
+              <option value="">Rentals</option>
+              <option value="">Custom Builds</option>
             </select>
           </div>
-          <button>Find shops</button>
+          <button>Find your spots</button>
         </form>
       </section>
     </>

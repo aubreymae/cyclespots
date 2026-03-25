@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 
 .env
+.env.local
+/backend/scripts/temp_data
