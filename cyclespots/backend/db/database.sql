@@ -1,10 +1,14 @@
 create database csdb;
 
+create extension if not exists postgis;
+
 create table stores (
     store_id int generated always as identity primary key,
     store_name text not null,
     street_address text,
     rating numeric(2,1),
+    location geography(point, 4326),
+    slug text unique,
     created_at timestamptz default now()
 );
 
@@ -20,3 +24,5 @@ create table store_services (
     foreign key (store_id) references stores(store_id) on delete cascade,
     foreign key (service_id) references services(service_id) on delete cascade
 );
+
+create index stores_location_idx on stores using gist (location);

@@ -17,14 +17,41 @@ async function readFromJSON() {
   }
 }
 
+async function combineServices() {
+  try {
+    const jsonStores = await readFromJSON();
+
+    const rows = ["store_name,service_name"];
+
+    jsonStores.forEach((store) => {
+      if (store.services.repairs) {
+        rows.push(`"${store.name}",Repairs`);
+      }
+      if (store.services.rentals) {
+        rows.push(`"${store.name}",Rentals`);
+      }
+      if (store.services.customBuilds) {
+        rows.push(`"${store.name}",Custom Builds`);
+      }
+    });
+
+    const csvStores = rows.join("\n");
+
+    await fs.writeFile("temp_data/store_services.csv", csvStores, "utf-8");
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
 async function convertToCSV() {
   try {
     const jsonStores = await readFromJSON();
 
     const csvRows = [
-      "store_name,street_address,rating",
+      "store_name,street_address,rating,location,slug",
       ...jsonStores.map(
-        (store) => `${store.name},${store.address},${store.rating}`,
+        (store) =>
+          `"${store.name}","${store.address}",${store.rating},POINT(${store.coordinates.longitude} ${store.coordinates.latitude}),${store.slug}`,
       ),
     ];
 
@@ -37,3 +64,4 @@ async function convertToCSV() {
 }
 
 convertToCSV();
+combineServices();
