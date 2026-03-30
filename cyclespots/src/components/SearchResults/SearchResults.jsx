@@ -21,9 +21,11 @@ function Results({ stores }) {
                 <td className="th-store-name">{store.store_name}</td>
                 <td className="th-address">{store.street_address}</td>
                 <td className="th-services">
-                  {store.store_services
-                    ?.map((ss) => ss.services.service_name)
-                    .join(", ") || " "}
+                  {store.services
+                    ? store.services.map((s) => s.name).join(", ")
+                    : store.store_services
+                        ?.map((ss) => ss.services.service_name)
+                        .join(", ") || " "}
                 </td>
                 <td className="th-rating">{store.rating}</td>
               </tr>
