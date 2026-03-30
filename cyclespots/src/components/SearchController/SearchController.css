@@ -1,0 +1,5 @@
+#store-listings-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--global-gap-lg);
+}

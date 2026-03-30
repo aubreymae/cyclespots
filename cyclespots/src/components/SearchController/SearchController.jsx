@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import SearchResults from "../SearchResults/SearchResults.jsx";
 import { getStore } from "../../api/storeService";
+import "./SearchController.css";
 
 export default function SearchController() {
   const [stores, setStores] = useState([]);
@@ -25,7 +26,7 @@ export default function SearchController() {
   };
 
   return (
-    <div className="store-listings-container">
+    <div id="store-listings-container">
       <SearchBar onSearchComplete={updateResults} />
       <SearchResults stores={stores} />
     </div>
