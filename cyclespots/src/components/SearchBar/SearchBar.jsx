@@ -3,13 +3,14 @@ import { handleSearch } from "../../api/searchService.js";
 import "./SearchBar.css";
 
 export default function SearchBar({ onSearchComplete }) {
-  const [input, setInput] = useState("");
+  const [address, setAddress] = useState("");
+  const [service, setService] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
+    if (!address.trim()) return;
 
-    const results = await handleSearch(input);
+    const results = await handleSearch(address, service);
 
     onSearchComplete(results);
   };
@@ -66,18 +67,23 @@ export default function SearchBar({ onSearchComplete }) {
             <input
               type="text"
               placeholder="Enter your address"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
             />
           </div>
           <div className="form-container__item custom-select">
-            <select name="" id="select-container">
+            <select
+              name=""
+              id="select-container"
+              value={service}
+              onChange={(e) => setService(e.target.value)}
+            >
               <option value="" disabled selected>
                 Choose a service
               </option>
-              <option value="">Repairs</option>
-              <option value="">Rentals</option>
-              <option value="">Custom Builds</option>
+              <option value="Repairs">Repairs</option>
+              <option value="Rentals">Rentals</option>
+              <option value="Custom Builds">Custom Builds</option>
             </select>
           </div>
           <button type="submit">Find your spots</button>

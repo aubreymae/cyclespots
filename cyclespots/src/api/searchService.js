@@ -14,12 +14,13 @@ async function getCoords(address) {
   return null;
 }
 
-async function handleSearch(address) {
+async function handleSearch(address, serviceName) {
   const { lat, lng } = await getCoords(address);
 
   const { data, error } = await supabase.rpc("get_stores_by_distance", {
     user_lat: lat,
     user_lng: lng,
+    target_service: serviceName || null,
   });
 
   if (error) console.error(error);
