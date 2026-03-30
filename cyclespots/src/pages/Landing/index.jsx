@@ -1,13 +1,13 @@
 import HeroSearch from "./HeroSearch";
 import FAQ from "./FAQ";
-import Contact from "./Contact";
+import ContactForm from "../../components/ContactForm/ContactForm.jsx";
 
 function Landing() {
   return (
     <>
       <HeroSearch />
       <FAQ />
-      <Contact />
+      <ContactForm />
     </>
   );
 }

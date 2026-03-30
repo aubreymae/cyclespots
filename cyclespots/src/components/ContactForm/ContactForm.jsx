@@ -1,6 +1,6 @@
-import "./Contact.css";
+import "./ContactForm.css";
 
-function Contact() {
+function ContactForm() {
   return (
     <>
       <div className="main-section-title-container">
@@ -79,4 +79,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactForm;
