@@ -1,24 +1,6 @@
-import { useEffect, useState } from "react";
-import "./StoreResults.css";
-import { getStore } from "../../api/storeService";
+import "./SearchResults.css";
 
-function Results() {
-  const [stores, setStores] = useState([]);
-
-  useEffect(() => {
-    async function fetchStores() {
-      try {
-        const result = await getStore();
-        setStores(result);
-        // console.log("Fetched stores:", result);
-      } catch (error) {
-        console.error("Error fetching stores:", error);
-      }
-    }
-
-    fetchStores();
-  }, []);
-
+function Results({ stores }) {
   return (
     <>
       <section id="store-results-section" className="framed-box">
@@ -53,10 +35,10 @@ function Results() {
   );
 }
 
-export default function StoreResults() {
+export default function SearchResults({ stores }) {
   return (
     <>
-      <Results />
+      <Results stores={stores} />
     </>
   );
 }

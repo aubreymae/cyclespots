@@ -1,11 +1,9 @@
-import SearchListing from "../../components/SearchListing/SearchListing";
-import StoreResults from "../../components/StoreResults/StoreResults";
+import SearchController from "../../components/SearchController/SearchController.jsx";
 
 function Listings() {
   return (
     <>
-      <SearchListing />
-      <StoreResults />
+      <SearchController />
     </>
   );
 }

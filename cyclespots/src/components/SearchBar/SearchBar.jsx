@@ -1,6 +1,19 @@
-import "./SearchListing.css";
+import { useState } from "react";
+import { handleSearch } from "../../api/searchService.js";
+import "./SearchBar.css";
 
-export default function SearchListing() {
+export default function SearchBar({ onSearchComplete }) {
+  const [input, setInput] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+
+    const results = await handleSearch(input);
+
+    onSearchComplete(results);
+  };
+
   return (
     <>
       <section id="search-listing-section" className="main-section framed-box">
@@ -43,9 +56,19 @@ export default function SearchListing() {
             </h2>
           </div>
         </div>
-        <form action="" id="hero-form" className="form-container">
+        <form
+          action=""
+          id="hero-form"
+          className="form-container"
+          onSubmit={handleSubmit}
+        >
           <div className="form-container__item">
-            <input type="text" placeholder="Enter your address" />
+            <input
+              type="text"
+              placeholder="Enter your address"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
           </div>
           <div className="form-container__item custom-select">
             <select name="" id="select-container">
@@ -57,7 +80,7 @@ export default function SearchListing() {
               <option value="">Custom Builds</option>
             </select>
           </div>
-          <button>Find your spots</button>
+          <button type="submit">Find your spots</button>
         </form>
       </section>
     </>
