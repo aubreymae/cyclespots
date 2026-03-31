@@ -110,18 +110,17 @@ button {
   cursor: pointer;
 }
 
-.accordion-summary::after {
-  content: "→";
+.accordion-icon {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  transition: 0.5s all;
+  transition: 0.5s ease-in;
 }
 
-.accordion-container[open] .accordion-summary::after {
-  content: "↓";
-  transition: 0.5s all;
+.accordion-container[open] .icon-right-arrow {
+  transform: rotate(90deg);
+  transition: 0.5s ease-out;
 }
 
 .accordion-answer-wrapper {

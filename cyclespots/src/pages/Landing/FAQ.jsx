@@ -16,7 +16,27 @@ function FAQ() {
       <section className="faq-section framed-box">
         <details name="faq" className="accordion-container">
           <summary className="accordion-summary">
-            Can I suggest a bike shop to be added?
+            <p>Can I suggest a bike shop to be added?</p>
+            <div className="accordion-icon">
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#000000"
+                className="icon-right-arrow"
+              >
+                <path
+                  d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
           </summary>
           <div className="accordion-answer-wrapper">
             <p>
@@ -27,7 +47,27 @@ function FAQ() {
         </details>
         <details name="faq" className="accordion-container">
           <summary className="accordion-summary">
-            I'm a shop owner. How do I get listed?
+            <p>I'm a shop owner. How do I get listed?</p>
+            <div className="accordion-icon">
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#000000"
+                className="icon-right-arrow"
+              >
+                <path
+                  d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
           </summary>
           <div className="accordion-answer-wrapper">
             <p>
@@ -38,7 +78,27 @@ function FAQ() {
         </details>
         <details name="faq" className="accordion-container">
           <summary className="accordion-summary">
-            Do you charge shops to be listed?
+            <p>Do you charge shops to be listed?</p>
+            <div className="accordion-icon">
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#000000"
+                className="icon-right-arrow"
+              >
+                <path
+                  d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
           </summary>
           <div className="accordion-answer-wrapper">
             <p>
@@ -49,7 +109,27 @@ function FAQ() {
         </details>
         <details name="faq" className="accordion-container">
           <summary className="accordion-summary">
-            Is Cyclespots available outside Toronto?
+            <p>Is Cyclespots available outside Toronto?</p>
+            <div className="accordion-icon">
+              <svg
+                width="24px"
+                height="24px"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                color="#000000"
+                className="icon-right-arrow"
+              >
+                <path
+                  d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
+                  stroke="#000000"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+            </div>
           </summary>
           <div className="accordion-answer-wrapper">
             <p>
