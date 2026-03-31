@@ -60,12 +60,10 @@ button {
   position: relative;
 }
 
-.custom-select::before,
-.custom-select::after {
-  --size: 0.3em;
+.icon-nav-down-arrow {
   position: absolute;
-  content: "";
-  right: 1em;
+  right: 3%;
+  top: 25%;
 }
 
 .main-section {
