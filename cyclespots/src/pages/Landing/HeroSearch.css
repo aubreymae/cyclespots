@@ -7,3 +7,12 @@
 #hero-form .form-container__item {
   flex-grow: 3;
 }
+
+.hero-btn {
+  width: fit-content;
+  padding: var(--global-padding-sm);
+  color: #fff;
+  background-color: var(--global-orange);
+  border-radius: var(--global-pill);
+  text-decoration: none;
+}
