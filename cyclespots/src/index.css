@@ -15,7 +15,7 @@
   --global-pill: 50vh;
   --global-border-circle: 50%;
 
-  font-family: "Amiko", Arial, sans-serif;
+  --global-font-family: "Amiko", Arial, sans-serif;
 
   color-scheme: light dark;
 
@@ -23,6 +23,10 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html * {
+  font-family: var(--global-font-family);
 }
 
 /* Reset styles */
@@ -40,7 +44,8 @@ p {
 
 button,
 select,
-form input[type="text"] {
+form input,
+textarea {
   padding: var(--global-padding-sm);
   border-radius: var(--global-pill);
   border: none;
@@ -149,7 +154,8 @@ button {
   }
 
   input,
-  select {
+  select,
+  textarea {
     background-color: var(--global-light-grey);
   }
 
