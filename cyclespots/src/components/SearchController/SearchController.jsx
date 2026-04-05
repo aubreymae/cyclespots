@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import SearchResults from "../SearchResults/SearchResults.jsx";
-import { getStore } from "../../api/storeService";
+import { getStores } from "../../api/storeService";
 import "./SearchController.css";
 
 export default function SearchController() {
@@ -11,7 +11,7 @@ export default function SearchController() {
   useEffect(() => {
     async function loadAll() {
       try {
-        const result = await getStore();
+        const result = await getStores();
         setStores(result);
       } catch (error) {
         console.error("Error fetching stores:", error);

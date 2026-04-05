@@ -1,6 +1,6 @@
 import supabase from "../db/supabaseClient.js";
 
-async function getStore() {
+async function getStores() {
   try {
     const { data, error } = await supabase.from("stores").select("*");
 
@@ -14,4 +14,4 @@ async function getStore() {
   }
 }
 
-export { getStore };
+export { getStores };
