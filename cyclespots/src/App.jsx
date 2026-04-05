@@ -7,6 +7,7 @@ import MainLayout from "./layouts/MainLayout";
 import Landing from "./pages/Landing";
 import Listings from "./pages/Listings";
 import Contact from "./pages/Contact";
+import StoreDetail from "./pages/StoreDetail";
 
 function App() {
   const [count, setCount] = useState(0);
