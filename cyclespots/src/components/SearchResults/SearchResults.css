@@ -47,7 +47,8 @@
 }
 
 thead .th-index,
-thead .th-store-name {
+thead .th-store-name,
+thead .th-rating {
   cursor: pointer;
 }
 

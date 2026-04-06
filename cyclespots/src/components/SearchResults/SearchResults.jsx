@@ -4,21 +4,38 @@ import "./SearchResults.css";
 
 function Results({ stores }) {
   const [sortedStores, setSortedStores] = useState([]);
-  const [ascending, setAscending] = useState(true);
+  const [sortConfig, setSortConfig] = useState({
+    key: null,
+    ascending: true,
+  });
 
   useEffect(() => {
     setSortedStores(stores);
   }, [stores]);
 
-  const sortByName = () => {
-    const sorted = [...sortedStores].sort((a, b) =>
-      ascending
-        ? a.store_name.localeCompare(b.store_name)
-        : b.store_name.localeCompare(a.store_name),
-    );
+  const sortData = (key) => {
+    let ascending = true;
+
+    if (sortConfig.key == key) {
+      ascending = !sortConfig.ascending;
+    }
+
+    const sorted = [...sortedStores].sort((a, b) => {
+      if (key === "store_id") {
+        return ascending ? a[key] - b[key] : b[key] - a[key];
+      }
+      if (key === "store_name") {
+        return ascending
+          ? a[key].localeCompare(b[key])
+          : b[key].localeCompare(a[key]);
+      }
+      if (key === "rating") {
+        return ascending ? a[key] - b[key] : b[key] - a[key];
+      }
+    });
 
     setSortedStores(sorted);
-    setAscending(!ascending);
+    setSortConfig({ key, ascending });
   };
 
   let navigate = useNavigate();
@@ -29,13 +46,20 @@ function Results({ stores }) {
         <table id="store-results-tb">
           <thead>
             <tr className="store-results-tb__h">
-              <th className="th-index">Index</th>
-              <th className="th-store-name" onClick={sortByName}>
+              <th className="th-index" onClick={() => sortData("store_id")}>
+                Index
+              </th>
+              <th
+                className="th-store-name"
+                onClick={() => sortData("store_name")}
+              >
                 Store Name
               </th>
               <th className="th-address">Address</th>
               <th className="th-services">Services</th>
-              <th className="th-rating">Rating</th>
+              <th className="th-rating" onClick={() => sortData("rating")}>
+                Rating
+              </th>
             </tr>
           </thead>
           <tbody>
