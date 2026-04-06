@@ -4,7 +4,7 @@ import "./Footer.css";
 function ResourceLinks() {
   return (
     <>
-      <p>All rights reserved.</p>
+      <p>© 2026 CycleSpots. All rights reserved.</p>
     </>
   );
 }
