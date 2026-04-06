@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getStoreBySlug } from "../../api/storeService.js";
+import "./StoreDetailView.css";
 
 export default function StoreDetail({ slug }) {
   const [store, setSingleStore] = useState(null);
@@ -23,10 +24,14 @@ export default function StoreDetail({ slug }) {
   if (!store) return <div>Store not found</div>;
 
   return (
-    <div>
-      <h1>{store.store_name}</h1>
-      <p>{store.street_address}</p>
-      <p>{store.rating}</p>
-    </div>
+    <>
+      <section className="store-container main-section framed-box">
+        <div className="store-title-container">
+          <h1>{store.store_name}</h1>
+          <span className="store-rating-bubble">{store.rating}</span>
+        </div>
+        <p>{store.street_address}</p>
+      </section>
+    </>
   );
 }
