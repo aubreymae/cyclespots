@@ -29,7 +29,6 @@
 .store-results-tb__h {
   display: flex;
   justify-content: flex-start;
-  cursor: pointer;
 }
 
 .store-results-tb__h :is(td, th) {
@@ -47,6 +46,11 @@
   flex: 0 0 100px;
 }
 
-.store-results-tb__h:hover > .th-store-name {
+thead .th-index,
+thead .th-store-name {
+  cursor: pointer;
+}
+
+tbody .store-results-tb__h:hover > .th-store-name {
   text-decoration: underline;
 }
