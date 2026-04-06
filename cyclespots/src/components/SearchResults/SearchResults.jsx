@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router";
 import "./SearchResults.css";
 
 function Results({ stores }) {
+  let navigate = useNavigate();
+
   return (
     <>
       <section id="store-results-section" className="framed-box">
@@ -16,7 +19,11 @@ function Results({ stores }) {
           </thead>
           <tbody>
             {stores.map((store) => (
-              <tr key={store.store_id} className="store-results-tb__h">
+              <tr
+                key={store.store_id}
+                className="store-results-tb__h"
+                onClick={() => navigate(`/stores/${store.slug}`)}
+              >
                 <td className="th-index">{store.store_id}</td>
                 <td className="th-store-name">{store.store_name}</td>
                 <td className="th-address">{store.street_address}</td>
