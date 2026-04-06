@@ -52,6 +52,10 @@ thead .th-rating {
   cursor: pointer;
 }
 
+tbody .store-results-tb__h {
+  cursor: pointer;
+}
+
 tbody .store-results-tb__h:hover > .th-store-name {
   text-decoration: underline;
 }
