@@ -1,7 +1,26 @@
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "./SearchResults.css";
 
 function Results({ stores }) {
+  const [sortedStores, setSortedStores] = useState([]);
+  const [ascending, setAscending] = useState(true);
+
+  useEffect(() => {
+    setSortedStores(stores);
+  }, [stores]);
+
+  const sortByName = () => {
+    const sorted = [...sortedStores].sort((a, b) =>
+      ascending
+        ? a.store_name.localeCompare(b.store_name)
+        : b.store_name.localeCompare(a.store_name),
+    );
+
+    setSortedStores(sorted);
+    setAscending(!ascending);
+  };
+
   let navigate = useNavigate();
 
   return (
@@ -11,14 +30,16 @@ function Results({ stores }) {
           <thead>
             <tr className="store-results-tb__h">
               <th className="th-index">Index</th>
-              <th className="th-store-name">Store Name</th>
+              <th className="th-store-name" onClick={sortByName}>
+                Store Name
+              </th>
               <th className="th-address">Address</th>
               <th className="th-services">Services</th>
               <th className="th-rating">Rating</th>
             </tr>
           </thead>
           <tbody>
-            {stores.map((store) => (
+            {sortedStores.map((store) => (
               <tr
                 key={store.store_id}
                 className="store-results-tb__h"
