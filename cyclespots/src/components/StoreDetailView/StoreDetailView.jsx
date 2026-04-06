@@ -29,6 +29,11 @@ export default function StoreDetail({ slug }) {
         <div className="store-title-container">
           <h1>{store.store_name}</h1>
           <span className="store-rating-bubble">{store.rating}</span>
+          {store.store_services?.map((s) => (
+            <span className="store-service-bubble" key={s.id}>
+              {s.services.service_name}
+            </span>
+          ))}
         </div>
         <p>{store.street_address}</p>
       </section>

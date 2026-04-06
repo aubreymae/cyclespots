@@ -12,8 +12,13 @@
 }
 
 .store-rating-bubble {
-  background-color: var(--global-orange);
+  background-color: lightcoral;
   padding: var(--global-padding-xs);
   border-radius: 100%;
-  color: #fff;
+}
+
+.store-service-bubble {
+  padding: var(--global-padding-xs);
+  border-radius: var(--global-pill);
+  background-color: lightgreen;
 }
