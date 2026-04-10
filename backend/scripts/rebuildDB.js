@@ -12,6 +12,7 @@ dotenv.config({ path: join(__dirname, "../.env") });
 const storesPath = join(__dirname, "temp_data", "stores.csv");
 const servicesPath = join(__dirname, "temp_data", "services.csv");
 const mappingPath = join(__dirname, "temp_data", "store_services.csv");
+const hoursPath = join(__dirname, "temp_data", "store_hours.csv");
 
 const supabase = createClient(
   process.env.VITE_SUPABASE_URL,
@@ -27,6 +28,9 @@ async function rebuild() {
       columns: true,
     });
     const mappingData = parse(fs.readFileSync(mappingPath, "utf8"), {
+      columns: true,
+    });
+    const hoursData = parse(fs.readFileSync(hoursPath, "utf8"), {
       columns: true,
     });
 
@@ -51,6 +55,10 @@ async function rebuild() {
           rating: parseFloat(row.rating),
           slug: row.slug,
           location: row.location,
+          phone: row.phone,
+          website: row.website,
+          image_url: row.image,
+          google_maps_url: row.google,
         })),
       )
       .select();
@@ -59,6 +67,19 @@ async function rebuild() {
     const storeMap = Object.fromEntries(
       insertedStores.map((s) => [s.store_name, s.store_id]),
     );
+
+    // Insert store hours
+    const { data: insertedHours, error: hoursError } = await supabase
+      .from("store_hours")
+      .insert(
+        hoursData.map((row) => ({
+          store_id: storeMap[row.store_name],
+          day_of_week: parseInt(row.day_of_week),
+          open_time: row.open_time != "" ? row.open_time : null,
+          close_time: row.close_time != "" ? row.close_time : null,
+        })),
+      );
+    if (hoursError) throw hoursError;
 
     // Link both tables
     const joinEntries = mappingData

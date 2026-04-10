@@ -43,15 +43,48 @@ async function combineServices() {
   }
 }
 
+async function combineHours() {
+  try {
+    const jsonStores = await readFromJSON();
+
+    const rows = ["store_name,day_of_week,open_time,close_time"];
+    const daysOfWeek = {
+      Sunday: 0,
+      Monday: 1,
+      Tuesday: 2,
+      Wednesday: 3,
+      Thursday: 4,
+      Friday: 5,
+      Saturday: 6,
+    };
+
+    jsonStores.forEach((store) => {
+      store.openingHours.forEach((h) => {
+        const dayIndex = daysOfWeek[h.day];
+        const open = h.open ? h.open : "";
+        const close = h.close ? h.close : "";
+
+        rows.push(`"${store.name}",${dayIndex},"${openTime}","${closeTime}"`);
+      });
+    });
+
+    const csvStores = rows.join("\n");
+
+    await fs.writeFile("temp_data/store_hours.csv", csvStores, "utf-8");
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
 async function convertToCSV() {
   try {
     const jsonStores = await readFromJSON();
 
     const csvRows = [
-      "store_name,street_address,rating,location,slug",
+      "store_name,street_address,rating,location,slug,phone,website,image_url,google_maps_url",
       ...jsonStores.map(
         (store) =>
-          `"${store.name}","${store.address}",${store.rating},POINT(${store.coordinates.longitude} ${store.coordinates.latitude}),${store.slug}`,
+          `"${store.name}","${store.address}",${store.rating},POINT(${store.coordinates.longitude} ${store.coordinates.latitude}),"${store.slug}","${store.phone}","${store.website}","${store.image}","${store.google}"`,
       ),
     ];
 

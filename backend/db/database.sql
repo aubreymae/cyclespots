@@ -34,7 +34,7 @@ create table store_services (
     foreign key (service_id) references services(service_id) on delete cascade
 );
 
-create table opening_hours (
+create table store_hours (
     store_hours_id int generated always as identity primary key,
     store_id int references stores(store_id) on delete cascade,
     day_of_week int not null, -- 0 = Sunday, 1 = Monday, ..., 6 = Saturday
