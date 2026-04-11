@@ -25,13 +25,13 @@ async function combineServices() {
 
     jsonStores.forEach((store) => {
       if (store.services.repairs) {
-        rows.push(`"${store.name}",Repairs`);
+        rows.push(`"${store.name}","Repairs"`);
       }
       if (store.services.rentals) {
-        rows.push(`"${store.name}",Rentals`);
+        rows.push(`"${store.name}","Rentals"`);
       }
       if (store.services.customBuilds) {
-        rows.push(`"${store.name}",Custom Builds`);
+        rows.push(`"${store.name}","Custom Builds"`);
       }
     });
 
@@ -64,7 +64,7 @@ async function combineHours() {
         const open = h.open ? h.open : "";
         const close = h.close ? h.close : "";
 
-        rows.push(`"${store.name}",${dayIndex},"${openTime}","${closeTime}"`);
+        rows.push(`"${store.name}",${dayIndex},"${open}","${close}"`);
       });
     });
 
@@ -98,3 +98,4 @@ async function convertToCSV() {
 
 convertToCSV();
 combineServices();
+combineHours();

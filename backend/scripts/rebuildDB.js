@@ -57,8 +57,8 @@ async function rebuild() {
           location: row.location,
           phone: row.phone,
           website: row.website,
-          image_url: row.image,
-          google_maps_url: row.google,
+          image_url: row.image_url,
+          google_maps_url: row.google_maps_url,
         })),
       )
       .select();
