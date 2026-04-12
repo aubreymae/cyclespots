@@ -12,6 +12,8 @@
 
 .nav__title-name {
   text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
 }
 
 #nav__menu {

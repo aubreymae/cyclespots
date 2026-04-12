@@ -19,7 +19,9 @@ function Menu() {
             >
               <rect width="100%" height="100%" rx="100" fill="#E5380D" />
             </svg>
-            <h1 className="nav__title-name">CycleSpots</h1>
+            <NavLink to="/" className="nav__title-name">
+              <h1>CycleSpots</h1>
+            </NavLink>
           </div>
           <div
             id="nav__icons"
