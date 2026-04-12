@@ -7,18 +7,58 @@
 .store-title-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   gap: var(--global-gap-sm);
 }
 
-.store-rating-bubble {
-  background-color: lightcoral;
-  padding: var(--global-padding-xs);
-  border-radius: 100%;
+.store-title-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--global-gap-sm);
 }
 
-.store-service-bubble {
+.store-services-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--global-gap-sm);
+  color: darkgray;
+}
+
+.services-list-title {
+  text-transform: uppercase;
+}
+
+.store-rating-bubble {
+  background-color: rgb(229, 56, 13);
   padding: var(--global-padding-xs);
-  border-radius: var(--global-pill);
-  background-color: lightgreen;
+  border-radius: 100%;
+  color: #fff;
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--global-gap-lg);
+}
+
+.grid-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--global-gap-lg);
+  height: fit-content;
+}
+
+.google-maps-container {
+  height: 300px;
+  border-radius: var(--global-border-radius-sm);
+  border: none;
+}
+
+@media (width <= 600px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+  }
 }
