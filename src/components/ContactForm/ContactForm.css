@@ -29,6 +29,14 @@
   width: 100%;
 }
 
+.contact-message-input {
+  border-radius: var(--global-border-radius-sm);
+  width: 100%;
+  min-height: 150px;
+  max-height: 400px;
+  resize: vertical;
+}
+
 .contact-section {
   padding: var(--global-padding-md);
 }

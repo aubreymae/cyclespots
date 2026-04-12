@@ -81,7 +81,7 @@ function ContactForm() {
             </label>
             <textarea
               name="message"
-              className="contact-input"
+              className="contact-message-input"
               placeholder="Hey team, wondering if we can be featured on your directory?"
               required
             />
