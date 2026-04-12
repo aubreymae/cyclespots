@@ -32,9 +32,13 @@
 }
 
 .store-rating-bubble {
-  background-color: rgb(229, 56, 13);
+  display: flex;
+  justify-content: center;
   padding: var(--global-padding-xs);
-  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(229, 56, 13);
   color: #fff;
 }
 
