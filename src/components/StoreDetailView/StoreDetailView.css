@@ -61,6 +61,12 @@
   border: none;
 }
 
+.store-hours-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 @media (width <= 600px) {
   .two-col-grid {
     grid-template-columns: 1fr;

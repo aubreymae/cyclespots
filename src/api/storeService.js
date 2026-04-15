@@ -20,7 +20,9 @@ async function getStoreBySlug(slug) {
   try {
     const { data, error } = await supabase
       .from("stores")
-      .select("*, store_services (services (service_id, service_name))")
+      .select(
+        "*, store_services (services (service_id, service_name)), store_hours (day_of_week, open_time, close_time)",
+      )
       .eq("slug", slug)
       .single();
 

@@ -7,6 +7,16 @@ export default function StoreDetail({ slug }) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const dayOfWeek = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
   useEffect(() => {
     async function loadStore() {
       try {
@@ -53,6 +63,27 @@ export default function StoreDetail({ slug }) {
           </section>
           <section className="store-container main-section framed-box">
             <h2>Store Hours</h2>
+            {store.store_hours?.length ? (
+              store.store_hours.map((h) => {
+                const day = dayOfWeek[h.day_of_week] ?? `Day ${h.day_of_week}`;
+                const hours =
+                  h.open_time && h.close_time
+                    ? `${h.open_time} - ${h.close_time}`
+                    : "Closed";
+
+                return (
+                  <div
+                    key={h.store_hours_id ?? h.day_of_week}
+                    className="store-hours-item-container"
+                  >
+                    <p>{day}</p>
+                    <p>{hours}</p>
+                  </div>
+                );
+              })
+            ) : (
+              <p>Hours not available</p>
+            )}
           </section>
         </div>
         <div className="grid-col grid-col-2">
