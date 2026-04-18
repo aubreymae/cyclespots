@@ -1,18 +1,20 @@
 import supabase from "../api/supabaseClient.js";
 
-async function getStores() {
+async function getStores({ lat, lng, service = null, page = 1, size = 12 }) {
   try {
-    const { data, error } = await supabase
-      .from("stores")
-      .select("*, store_services (services (service_id, service_name))");
+    const { data, error } = await supabase.rpc("get_stores_by_distance", {
+      user_lat: lat,
+      user_lng: lng,
+      target_service: service,
+      page_number: page,
+      page_size: size,
+    });
 
-    if (error) {
-      throw new Error(error.message);
-    }
-
-    return data;
+    if (error) throw error;
+    return data; // This now contains the store data + total_count
   } catch (error) {
-    throw new Error(error.message);
+    console.error("Error in fetchStores:", error.message);
+    return [];
   }
 }
 

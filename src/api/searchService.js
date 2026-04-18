@@ -21,6 +21,8 @@ async function handleSearch(address, serviceName) {
     user_lat: lat,
     user_lng: lng,
     target_service: serviceName || null,
+    page_number: 1,
+    page_size: 12,
   });
 
   if (error) console.error(error);
