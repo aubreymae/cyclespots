@@ -137,6 +137,7 @@ button {
     --global-border: solid 1px #000;
 
     --global-orange: #e5380d;
+    --global-dark-orange: #ca320c;
     --global-light-grey: #eeeeee;
   }
 
@@ -152,6 +153,10 @@ button {
   button {
     color: #fff;
     background-color: var(--global-orange);
+  }
+
+  button:hover {
+    background-color: var(--global-dark-orange);
   }
 
   input,
