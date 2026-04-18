@@ -7,14 +7,16 @@ import "./SearchController.css";
 export default function SearchController() {
   const [stores, setStores] = useState([]);
   const [coords, setCoords] = useState({ lat: 43.6532, lng: -79.3832 }); // Default Toronto
+  const [service, setService] = useState(null);
   const [page, setPage] = useState(1);
   const [totalCount, setTotalCount] = useState(0);
 
-  const loadStores = async (currentCoords, currentPage) => {
+  const loadStores = async (currentCoords, currentPage, currentService) => {
     try {
       const result = await getStores({
         lat: currentCoords.lat,
         lng: currentCoords.lng,
+        service: currentService,
         page: currentPage,
         size: 12,
       });
@@ -30,8 +32,8 @@ export default function SearchController() {
   };
 
   useEffect(() => {
-    loadStores(coords, page);
-  }, [coords, page]);
+    loadStores(coords, page, service);
+  }, [coords, page, service]);
 
   const nextPage = () => setPage((p) => p + 1);
   const prevPage = () => setPage((p) => Math.max(1, p - 1));
@@ -39,9 +41,12 @@ export default function SearchController() {
   return (
     <div id="store-listings-container">
       <SearchBar
-        onSearchComplete={(newCoords) => {
-          setCoords(newCoords);
-          setPage(1); // Reset to page 1 on new search
+        onSearchComplete={(searchParams) => {
+          if (searchParams) {
+            setCoords({ lat: searchParams.lat, lng: searchParams.lng });
+            setService(searchParams.service);
+            setPage(1); // Reset to page 1 on new search
+          }
         }}
       />
 
@@ -57,7 +62,7 @@ export default function SearchController() {
             width="24px"
             height="24px"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color="#ffffff"
@@ -65,9 +70,9 @@ export default function SearchController() {
             <path
               d="M21 12L3 12M3 12L11.5 3.5M3 12L11.5 20.5"
               stroke="#ffffff"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></path>
           </svg>
         </button>
@@ -83,7 +88,7 @@ export default function SearchController() {
             width="24px"
             height="24px"
             viewBox="0 0 24 24"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             color="#ffffff"
@@ -91,9 +96,9 @@ export default function SearchController() {
             <path
               d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
               stroke="#ffffff"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></path>
           </svg>
         </button>

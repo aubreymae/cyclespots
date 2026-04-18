@@ -13,7 +13,7 @@ async function getStores({ lat, lng, service = null, page = 1, size = 12 }) {
     if (error) throw error;
     return data; // This now contains the store data + total_count
   } catch (error) {
-    console.error("Error in fetchStores:", error.message);
+    console.error("Error in getStores:", error.message);
     return [];
   }
 }

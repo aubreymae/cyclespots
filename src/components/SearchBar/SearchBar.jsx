@@ -10,9 +10,10 @@ export default function SearchBar({ onSearchComplete }) {
     e.preventDefault();
     if (!address.trim()) return;
 
-    const results = await handleSearch(address, service);
-
-    onSearchComplete(results);
+    const searchParams = await handleSearch(address, service);
+    if (searchParams) {
+      onSearchComplete(searchParams);
+    }
   };
 
   return (

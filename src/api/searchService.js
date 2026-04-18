@@ -1,4 +1,5 @@
 import supabase from "../api/supabaseClient.js";
+import { getStores } from "./storeService.js";
 
 async function getCoords(address) {
   const query = `${address}, Toronto`;
@@ -14,19 +15,16 @@ async function getCoords(address) {
   return null;
 }
 
-async function handleSearch(address, serviceName) {
-  const { lat, lng } = await getCoords(address);
+async function handleSearch(address, service) {
+  const coords = await getCoords(address);
 
-  const { data, error } = await supabase.rpc("get_stores_by_distance", {
-    user_lat: lat,
-    user_lng: lng,
-    target_service: serviceName || null,
-    page_number: 1,
-    page_size: 12,
-  });
+  if (!coords || coords.lat == null || coords.lng == null) {
+    console.error("Could not find coordinates for provided address.");
+    return null;
+  }
 
-  if (error) console.error(error);
-  return data;
+  console.log("Search coords:", { ...coords, service: service || null });
+  return { ...coords, service: service || null };
 }
 
 export { handleSearch };
