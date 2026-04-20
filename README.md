@@ -4,8 +4,6 @@ A directory for Toronto cyclists to find specialized bike services.
 
 CycleSpots is a full-stack web application designed to solve a specific local problem: finding the right bike shop based on proximity and specialized service offerings.
 
-The project highlights a transition from design-centric development to systems-focused engineering, utilizing spatial indexing and efficient data modeling to handle geographic queries.
-
 ## 🛠️ Tech Stack
 
 **Frontend**: React, JavaScript, Vite
@@ -27,7 +25,6 @@ The project highlights a transition from design-centric development to systems-f
 
 2. Relational Data Modeling  
    The application uses a many-to-many relationship to link stores with their specific services.
-   - **Architecture:** Complex SQL RPC calls return nested JSON arrays, reducing total network round-trips to a single request per search
 
 ## 🏗️ Architecture & Decisions
 
@@ -37,7 +34,7 @@ While the project started in Astro, I migrated to React to better handle the com
 
 ### Bespoke vs. Automated
 
-In line with my engineering philosophy, I chose to build the search and distance logic from scratch rather than relying on high-level "black box" libraries. This ensured a deep understanding of the underlying coordinate systems and SQL performance.
+In line with my engineering philosophy, I chose to build the search and distance logic from scratch. This ensured a deep understanding of the underlying coordinate systems and SQL performance.
 
 ## 🗺️ Roadmap
 
