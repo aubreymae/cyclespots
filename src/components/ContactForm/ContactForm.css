@@ -41,6 +41,12 @@
   padding: var(--global-padding-md);
 }
 
+@media (prefers-color-scheme: light) {
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .contact-form__row {

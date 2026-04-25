@@ -21,7 +21,16 @@
   background: var(--global-dark-orange);
 }
 
-.pagination-arrow-btn svg {
-  fill: #000;
-  color: #000;
+@media (prefers-color-scheme: light) {
+  .pagination-arrow-btn svg {
+    fill: #000;
+    color: #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .pagination-arrow-btn svg {
+    fill: #ffffff;
+    color: #ffffff;
+  }
 }

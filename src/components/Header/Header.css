@@ -13,7 +13,6 @@
 .nav__title-name {
   text-transform: uppercase;
   text-decoration: none;
-  color: #000;
 }
 
 #nav__menu {
@@ -32,10 +31,7 @@
 
   padding: var(--nav-pill-padding);
   border-radius: var(--global-pill);
-  border: var(--nav-pill-border);
   text-decoration: none;
-  color: #000;
-  background: #fff;
   white-space: nowrap;
 }
 
@@ -50,6 +46,75 @@
 
 #menu-icon-x {
   cursor: pointer;
+}
+
+@media (prefers-color-scheme: light) {
+  #menu-icon {
+    border: solid 1px #000;
+    background: #fff;
+  }
+
+  #menu-icon-x.fixed {
+    border: solid 1px #000;
+    background: #fff;
+  }
+
+  .nav__title-name {
+    color: #000;
+  }
+
+  .nav__menu-item-link {
+    --nav-pill-padding: 3px 20px 3px 20px;
+    --nav-pill-border: solid 1px #000;
+    color: #000;
+    border: var(--nav-pill-border);
+    background: #fff;
+  }
+
+  #nav__menu.open {
+    background-color: #fff;
+    border: solid 1px #000;
+  }
+
+  #nav__icons svg {
+    fill: #000;
+    stroke: #000;
+    color: #000;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #menu-icon {
+    border: var(--global-border);
+    background: var(--global-light-grey);
+  }
+
+  #menu-icon-x.fixed {
+    border: var(--global-border);
+    background: var(--global-light-grey);
+  }
+
+  .nav__title-name {
+    color: #ffffff;
+  }
+
+  .nav__menu-item-link {
+    --nav-pill-padding: 3px 20px 3px 20px;
+    border: var(--global-border);
+    color: #ffffff;
+    background: var(--global-light-grey);
+  }
+
+  #nav__menu.open {
+    background-color: var(--global-light-grey);
+    border: var(--global-border);
+  }
+
+  #nav__icons svg {
+    fill: #fff;
+    stroke: #fff;
+    color: #fff;
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
@@ -75,18 +140,14 @@
     align-items: center;
     right: var(--global-padding-sm);
     padding: var(--global-padding-sm);
-    border: solid 1px #000;
     border-radius: var(--global-border-circle);
-    background: #fff;
   }
 
   #menu-icon-x.fixed {
     position: fixed;
     right: var(--global-padding-sm);
     padding: var(--global-padding-sm);
-    border: solid 1px #000;
     border-radius: var(--global-border-circle);
-    background: #fff;
     cursor: pointer;
   }
 
@@ -102,9 +163,7 @@
     align-self: flex-end;
     gap: var(--global-gap-sm);
     width: fit-content;
-    background-color: #fff;
     padding: var(--global-padding-sm);
-    border: solid 1px #000;
     border-radius: var(--global-border-radius-sm);
     top: 5em;
     z-index: 10;

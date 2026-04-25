@@ -10,8 +10,6 @@
 
 #store-results-tb thead {
   text-transform: uppercase;
-  background-color: #333;
-  color: #fff;
 }
 
 .store-results-tb__h th {
@@ -20,10 +18,6 @@
 
 .store-results-tb__h td {
   padding: var(--global-padding-sm);
-}
-
-#store-results-tb tr:nth-child(even) {
-  background-color: #eee;
 }
 
 .store-results-tb__h {
@@ -58,4 +52,27 @@ tbody .store-results-tb__h {
 
 tbody .store-results-tb__h:hover > .th-store-name {
   text-decoration: underline;
+}
+
+@media (prefers-color-scheme: light) {
+  #store-results-tb thead {
+    background-color: #333;
+    color: #fff;
+  }
+
+  #store-results-tb tr:nth-child(even) {
+    background-color: #eee;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  #store-results-tb thead {
+    background-color: var(--global-light-grey);
+    color: #fff;
+  }
+
+  #store-results-tb tr:nth-child(even) {
+    --global-dark-grey: #343434;
+    background-color: var(--global-dark-grey);
+  }
 }

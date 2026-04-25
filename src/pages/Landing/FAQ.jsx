@@ -25,12 +25,12 @@ function FAQ() {
                 strokeWidth="1.5"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                color="#000000"
+                color="currentColor"
                 className="icon-right-arrow"
               >
                 <path
                   d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
-                  stroke="#000000"
+                  stroke="currentColor"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -56,12 +56,12 @@ function FAQ() {
                 strokeWidth="1.5"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                color="#000000"
+                color="currentColor"
                 className="icon-right-arrow"
               >
                 <path
                   d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
-                  stroke="#000000"
+                  stroke="currentColor"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -87,12 +87,12 @@ function FAQ() {
                 strokeWidth="1.5"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                color="#000000"
+                color="currentColor"
                 className="icon-right-arrow"
               >
                 <path
                   d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
-                  stroke="#000000"
+                  stroke="currentColor"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -118,12 +118,12 @@ function FAQ() {
                 strokeWidth="1.5"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                color="#000000"
+                color="currentColor"
                 className="icon-right-arrow"
               >
                 <path
                   d="M3 12L21 12M21 12L12.5 3.5M21 12L12.5 20.5"
-                  stroke="#000000"
+                  stroke="currentColor"
                   strokeWidth="1.5"
                   strokeLinecap="round"
                   strokeLinejoin="round"
