@@ -110,8 +110,15 @@ button {
 
 .accordion-summary {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  gap: var(--global-gap-sm);
   list-style: none;
   cursor: pointer;
+}
+
+.accordion-summary p {
+  width: fit-content;
 }
 
 .accordion-icon {
@@ -181,6 +188,10 @@ button {
   .accordion-container {
     border-bottom: solid 1px lightgray;
   }
+
+  .accordion-container:last-child {
+    border-bottom: none;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -232,6 +243,10 @@ button {
 
   .accordion-container {
     border-bottom: var(--global-border);
+  }
+
+  .accordion-container:last-child {
+    border-bottom: none;
   }
 }
 
