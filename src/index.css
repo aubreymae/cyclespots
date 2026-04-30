@@ -109,9 +109,10 @@ button {
 }
 
 .accordion-summary {
-  position: relative;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  height: fit-content;
   gap: var(--global-gap-sm);
   list-style: none;
   cursor: pointer;
@@ -122,10 +123,6 @@ button {
 }
 
 .accordion-icon {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   transition: 0.5s ease-in;
 }
 
