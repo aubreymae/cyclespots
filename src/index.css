@@ -257,8 +257,11 @@ button {
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media (width < 600px) {
   /* Code */
+  .main-section-title-container {
+    padding: 0 var(--global-padding-sm);
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
