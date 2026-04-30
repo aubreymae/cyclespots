@@ -21,8 +21,6 @@ export default function SearchBar({ onSearchComplete }) {
       <section id="search-listing-section" className="main-section framed-box">
         <div className="listing-wrapper">
           <svg
-            width="24px"
-            height="24px"
             strokeWidth="1.5"
             viewBox="0 0 24 24"
             fill="none"
